@@ -1,5 +1,5 @@
 # Prihlaseni do aplikace.
-oddelovac = '-' * 40
+oddelovac = '-' * 60
 print(oddelovac)
 # 1.Na začátku přivítá uživatele.
 print('Vitej v naši aplikaci. Prosím přihlašte se:')
@@ -15,7 +15,7 @@ if uzivatele.get(jmeno) != heslo:
     print('špátné jméno nebo heslo!!!')
 else:
     print('Si přihlášen :)')
-    print(oddelovac)
+print(oddelovac)
 
 # 4. Program nechá uživatele vybrat mezi třemi texty, uloženými v proměnné TEXTS.
 print('Máme 3 texty k analyzovaní.')
@@ -108,3 +108,4 @@ for slovo in text_o:
     if slovo.isnumeric():
        cisla = cisla + int(slovo)
 print(f"Když spočítame všechny čísla v textě dostaneme: {str(cisla)}")
+print(oddelovac)
