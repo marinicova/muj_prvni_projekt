@@ -109,4 +109,4 @@ garpike and stingray are also present.'''
         if slovo.isnumeric():
             cisla = cisla + int(slovo)
     print(f"Když spočítame všechny čísla v textě dostaneme: {str(cisla)}")
-    print(oddelovac)
+print(oddelovac)
