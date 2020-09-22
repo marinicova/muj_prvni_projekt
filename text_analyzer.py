@@ -13,17 +13,18 @@ print(oddelovac)
 # 3. Zjistí, jestli zadané údaje odpovídají někomu z registrovaných uživatelů.
 if uzivatele.get(jmeno) != heslo:
     print('špátné jméno nebo heslo!!!')
-
+    print(oddelovac)
+    exit()
 else:
     print('Si přihlášen :)')
     print(oddelovac)
 
 # 4. Program nechá uživatele vybrat mezi třemi texty, uloženými v proměnné TEXTS.
-    print('Máme 3 texty k analyzovaní.')
-    vyber = int(input('Prosím vložte číslo od 1 do 3: '))
-    print(oddelovac)
+print('Máme 3 texty k analyzovaní.')
+vyber = int(input('Prosím vložte číslo od 1 do 3: '))
+print(oddelovac)
 
-    texts = ['''
+texts = ['''
 Situated about 10 miles west of Kemmerer, 
 Fossil Butte is a ruggedly impressive 
 topographic feature that rises sharply 
@@ -62,51 +63,51 @@ garpike and stingray are also present.'''
 # e - počet čísel (ne cifer!).
 
 # Úprava textu
-    text = texts[vyber - 1]
-    text_o = [slovo.strip(",.") for slovo in text.split()]
+text = texts[vyber - 1]
+text_o = [slovo.strip(",.") for slovo in text.split()]
 
-    # a
-    slova = len(text_o)
-    velke_pp = 0
-    velke_p = 0
-    male_p = 0
-    cislice = 0
-    for znak in text_o:
-        # b
-        if znak.istitle():
-            velke_pp += 1
-            continue
+# a
+slova = len(text_o)
+velke_pp = 0
+velke_p = 0
+male_p = 0
+cislice = 0
+for znak in text_o:
+    # b
+    if znak.istitle():
+        velke_pp += 1
+        continue
     # c
-        if znak.isupper():
-            velke_p += 1
+    if znak.isupper():
+        velke_p += 1
     # d
-        elif znak.islower():
-            male_p += 1
+    elif znak.islower():
+        male_p += 1
     # e
-        elif znak.isnumeric():
-            cislice += 1
+    elif znak.isnumeric():
+        cislice += 1
 
 # Vypsání analyzy textu
-    print(f"V texte se nachází  {slova} slov.")
-    print(f"Daný text obsahuje {velke_pp} slov začínajících velkým písmenem.")
-    print(f"Daný text obsahuje  {velke_p} slov psaných velkými písmeny.")
-    print(f"Daný text obsahuje {male_p} slov psaných malými písmeny.")
-    print(f"Daný text obsahuje {cislice} čísla.")
-    print(oddelovac)
+print(f"V texte se nachází  {slova} slov.")
+print(f"Daný text obsahuje {velke_pp} slov začínajících velkým písmenem.")
+print(f"Daný text obsahuje  {velke_p} slov psaných velkými písmeny.")
+print(f"Daný text obsahuje {male_p} slov psaných malými písmeny.")
+print(f"Daný text obsahuje {cislice} čísla.")
+print(oddelovac)
 
 # 6. Program zobrazí jednoduchý sloupcový graf, který bude reprezentovat četnost různých délek slov v textu.
-    pocet_pismen_slovo = {}
-    for slovo in text_o:
-        pocet_pismen_slovo[len(slovo)] = pocet_pismen_slovo.get(len(slovo), 0) + 1
-    od_nejmensiho = sorted(pocet_pismen_slovo.keys(), reverse=False)
-    for klic in od_nejmensiho:
-        print(f"{klic} {'*'* pocet_pismen_slovo.get(klic)} {pocet_pismen_slovo.get(klic)}")
-    print(oddelovac)
+pocet_pismen_slovo = {}
+for slovo in text_o:
+    pocet_pismen_slovo[len(slovo)] = pocet_pismen_slovo.get(len(slovo), 0) + 1
+od_nejmensiho = sorted(pocet_pismen_slovo.keys(), reverse=False)
+for klic in od_nejmensiho:
+    print(f"{klic} {'*'* pocet_pismen_slovo.get(klic)} {pocet_pismen_slovo.get(klic)}")
+print(oddelovac)
 
 # 7. Program spočítá součet všech čísel (ne cifer!) v textu.
-    cisla = 0
-    for slovo in text_o:
-        if slovo.isnumeric():
-            cisla = cisla + int(slovo)
-    print(f"Když spočítame všechny čísla v textě dostaneme: {str(cisla)}")
+cisla = 0
+for slovo in text_o:
+    if slovo.isnumeric():
+        cisla = cisla + int(slovo)
+print(f"Když spočítame všechny čísla v textě dostaneme: {str(cisla)}")
 print(oddelovac)
