@@ -91,3 +91,4 @@ print(oddelovac)
 cisla = sum([int(slovo) for slovo in text_o if slovo.isnumeric()])
 print(f"Když spočítame všechny čísla v textě dostaneme: {str(cisla)}")
 print(oddelovac)
+
